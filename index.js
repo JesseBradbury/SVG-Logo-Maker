@@ -8,7 +8,15 @@ const questions = [
     {
         type: "input",
         name: "characters",
-        message: "Choose 3 characters",  
+        message: "Choose up to 3 characters",
+        validate: function(value) {
+            const inputLength = value.trim().length;
+            if (inputLength > 3) {
+                return "Please enter up to three characters.";
+            }
+            return true;
+        }
+          
     },
     // Questions for letter color(color keyword (OR a hexadecimal number))
     {
