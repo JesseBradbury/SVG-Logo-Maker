@@ -1,12 +1,13 @@
 // Import required files
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateSvg = require("./lib/generateSVG")
 // TODO: Set up inquirer questions
 const questions = [
     // Question for Letters (Max 3)
     {
         type: "input",
-        name: "letters",
+        name: "characters",
         message: "Choose 3 characters",  
     },
     // Questions for letter color(color keyword (OR a hexadecimal number))
@@ -26,17 +27,36 @@ const questions = [
     {
         type: "input",
         name: "shapeColor",
-        message: "Choose the text color (keyword or hex)",
+        message: "Choose the shape color (keyword or hex)",
     }
 ]
-// Output text "Generated logo.svg" is printed in the command line
 
+// Generate the file named `logo.svg` 300x200 pixel image that matches the criteria entered
+function writeToFile(fileName, data) {
+    const svgContent = generateSvg(data);
+    fs.writeFile(
+        fileName,
+        svgContent,
+        (err) => {
+            if (err) {
+                console.error(err);
+                return;
+            }
+            // Output text "Generated logo.svg" is printed in the command line
+            console.log("Generated logo.svg")
 
-// Generate the file named `logo.svg`
-// 300x200 pixel image that matches the criteria entered
+        }
+    );
+}
+
 
 function init() {
     inquirer
         .prompt(questions)
+        .then((response) => {
+            const fileName = "logo.svg";
+            writeToFile(fileName, response)
+        }
+        );
 }
 init()
