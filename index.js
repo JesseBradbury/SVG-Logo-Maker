@@ -2,6 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateSvg = require("./lib/generateSVG")
+
 // TODO: Set up inquirer questions
 const questions = [
     // Question for Letters (Max 3)
