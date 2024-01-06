@@ -1,9 +1,8 @@
-// Import required files
+
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateSvg = require("./lib/generateSVG")
 
-// TODO: Set up inquirer questions
 const questions = [
     // Question for Letters (Max 3)
     {
@@ -40,7 +39,7 @@ const questions = [
     }
 ]
 
-// Generate the file named `logo.svg` 300x200 pixel image that matches the criteria entered
+// Generates the file named `logo.svg` 
 function writeToFile(fileName, data) {
     const svgContent = generateSvg(data);
     fs.writeFile(

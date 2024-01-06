@@ -1,4 +1,4 @@
-// This is where we will validate our shapes functions. 
+// This is our tests for the shapes file
 const { Triangle, Circle, Square } = require('../lib/shapes.js')
 
 describe('Shapes', () => {

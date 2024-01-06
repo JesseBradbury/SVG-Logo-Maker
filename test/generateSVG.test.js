@@ -1,3 +1,4 @@
+// This is the test that confirms the correct SVG file is created.
 const generateSvg = require('../lib/generateSvg.js')
 
 describe('generateSvg', () => {
