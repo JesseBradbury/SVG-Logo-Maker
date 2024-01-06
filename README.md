@@ -14,7 +14,7 @@ This is a exercise in using objects with node.js. It is also a practice in imple
   - [License](#license)
 
 
-## Instalation:
+## Installation:
 This application requires using inquirer and jest for testing, use "npm i" to install the required dependencies.
 
 ## Usage:
